@@ -78,9 +78,19 @@ for tweet in tweepy.Cursor(api.search, q="maradona", tweet_mode="extended").item
 #)
 
 clientes3.put_object(
-        Body=str(json.dumps(tweet, user, data)),
+        Body=str(json.dumps(tweet)),
         Bucket='uniquindioia',
         Key='proyecto/' + 'archivos.json'
     )
 
+clientes3.put_object(
+        Body=str(json.dumps(user)),
+        Bucket='uniquindioia',
+        Key='proyecto/' + 'archivos.json'
+    )
+clientes3.put_object(
+        Body=str(json.dumps(data)),
+        Bucket='uniquindioia',
+        Key='proyecto/' + 'archivos.json'
+    )
 

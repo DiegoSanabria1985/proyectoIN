@@ -11,8 +11,7 @@ access_token = "161715257-t2hUBSkhtbkoFNARy4jtaETzAOHQ60Xx1VxJW0eS"
 access_token_secret = "lAaKqYJUNDkVAVlbbZgVgkC3T89LcH9lnmV8F22e6sT0j"
 
 
-clientes3 = boto3.client('s3', aws_access_key_id="AKIAIRC3YFKTECX6J7KQ",
-                      aws_secret_access_key="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")
+
 
 auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
 auth.set_access_token(access_token, access_token_secret)
@@ -77,20 +76,4 @@ for tweet in tweepy.Cursor(api.search, q="maradona", tweet_mode="extended").item
    # Key= "/proyecto" + archivo2,
 #)
 
-clientes3.put_object(
-        Body=str(json.dumps(tweet)),
-        Bucket='uniquindioia',
-        Key='proyecto/' + 'archivos.json'
-    )
-
-clientes3.put_object(
-        Body=str(json.dumps(user)),
-        Bucket='uniquindioia',
-        Key='proyecto/' + 'archivos.json'
-    )
-clientes3.put_object(
-        Body=str(json.dumps(data)),
-        Bucket='uniquindioia',
-        Key='proyecto/' + 'archivos.json'
-    )
 
